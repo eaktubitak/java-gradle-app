@@ -34,9 +34,11 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
 
-    #Calling gradle build.
     - name: Build with Gradle
       run: ./gradlew build
+    #GitHub Actions'da bu komutu çalıştırmak, my-app-1.0-SNAPSHOT.jar dosyasının oluşturulup oluşturulmadığını ve doğru dizinde olup olmadığını doğrulamanıza yardımcı olabilir.
+    - name: List build directory
+      run: ls -al build/libs
 
     #https://github.com/mr-smithers-excellent/docker-build-push
     - name: Build and Push Docker Image
