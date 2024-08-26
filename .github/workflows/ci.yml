@@ -34,10 +34,11 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
 
-      #Calling gradle build.
+    #Calling gradle build.
     - name: Build with Gradle
       run: ./gradlew build
 
+    #https://github.com/mr-smithers-excellent/docker-build-push
     - name: Build and Push Docker Image
       uses: mr-smithers-excellent/docker-build-push@v6
       with:
